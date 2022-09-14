@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: [
+    './src/**/*.tsx'  /** Every .tsx file located in any subdirectory of `./src/`. */
+  ],
   theme: {
     extend: {},
   },
