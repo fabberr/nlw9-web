@@ -3,17 +3,12 @@
 // 3rd-party assets
 import { MagnifyingGlassPlus } from 'phosphor-react';
 
-/********** Interfaces **********/
-
-export interface CreateAdBannerProps {
-}
-
 /**
- *  Component: CreateAdBanner.
+ * Component: CreateAdBanner.
  * 
- * 
+ * Renders a banner with a button to publish a new ad.
 */
-export function CreateAdBanner(props: CreateAdBannerProps) {
+export function CreateAdBanner() {
 
   /********** TSX Code **********/
   

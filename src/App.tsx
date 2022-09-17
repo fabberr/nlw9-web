@@ -1,5 +1,8 @@
 /********** Module Imports **********/
 
+// 3rd-party
+import { useEffect } from 'react';
+
 // internal styles and assets
 import './styles/main.css';
 import logoNLW9 from './assets/nlw9-logo.svg';
