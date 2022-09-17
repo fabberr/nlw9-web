@@ -26,7 +26,12 @@ function App() {
   // fetch list of games from our API once (`App` is rendered only once)
   const [games, setGames] = useState([]);
   useEffect(() => {
-    // fetch(`http://${appconfig.API_BASE_URL}/games`);
+    const resource = 'games';
+    const URL = `http://${appconfig.API_BASE_URL}/${resource}`
+    fetch(URL, { method: 'GET' })
+      .then(res => res.json())
+      .then(data => setGames(data))
+      .catch(err => console.error(err));
   }, []);
 
   /********** TSX Code **********/
