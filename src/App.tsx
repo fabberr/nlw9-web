@@ -19,7 +19,7 @@ function App() {
   
   return (
     <div id="base" className="max-w-[1344px] mx-auto flex flex-col items-center my-20">
-      <img src={logoNLW9} alt="NLW eSports" />
+      <img src={logoNLW9} alt="NLW eSports | Find your DUO" />
 
       <h1 className="text-6xl text-white font-black mt-20">
         Seu <span className="bg-nlw-gradient bg-clip-text text-transparent">duo</span> está aqui.
