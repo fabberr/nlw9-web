@@ -3,12 +3,18 @@
 // 3rd-party assets
 import { MagnifyingGlassPlus } from 'phosphor-react';
 
-// internal assets
+// internal styles and assets
 import './styles/main.css';
 import logoNLW9 from './assets/nlw9-logo.svg';
 
-/********** React Component: App **********/
+// internal components
+import { GameCard } from './components/GameCard';
 
+/**
+ * Component: App
+ * 
+ * Main UI element, all other elements are children of this root component.
+*/
 function App() {
 
   /********** TSX Code **********/
@@ -20,55 +26,55 @@ function App() {
       <h1 className="text-6xl text-white font-black mt-20">
         Seu <span className="bg-nlw-gradient bg-clip-text text-transparent">duo</span> está aqui.
       </h1>
-
       <div id="carrousel" className="grid grid-cols-6 gap-6 mt-16">
-        <a className="relative rounded-lg overflow-hidden">
-          <img src="/img/game-01.png" alt="game-01" />
-          <div className="w-full pt-16 pb-4 px-4 bg-nlw-game-card-gradient absolute bottom-0 left-0 right-0">
-            <strong className="font-bold text-white block">League of Legends</strong>
-            <span className="text-sm text-zinc-300 block">XX anúncios</span>
-          </div>
-        </a>
+        
+        <GameCard 
+          data={{
+            title: 'League of Legends',
+            coverURL: '/img/game-01.png',
+            ads: 10
+          }}
+        />
 
-        <a className="relative rounded-lg overflow-hidden">
-          <img src="/img/game-02.png" alt="game-02" />
-          <div className="w-full pt-16 pb-4 px-4 bg-nlw-game-card-gradient absolute bottom-0 left-0 right-0">
-            <strong className="font-bold text-white block">Dota 2</strong>
-            <span className="text-sm text-zinc-300 block">XX anúncios</span>
-          </div>
-        </a>
-
-        <a className="relative rounded-lg overflow-hidden">
-          <img src="/img/game-03.png" alt="game-03" />
-          <div className="w-full pt-16 pb-4 px-4 bg-nlw-game-card-gradient absolute bottom-0 left-0 right-0">
-            <strong className="font-bold text-white block">CSGO</strong>
-            <span className="text-sm text-zinc-300 block">XX anúncios</span>
-          </div>
-        </a>
-
-        <a className="relative rounded-lg overflow-hidden">
-          <img src="/img/game-04.png" alt="game-04" />
-          <div className="w-full pt-16 pb-4 px-4 bg-nlw-game-card-gradient absolute bottom-0 left-0 right-0">
-            <strong className="font-bold text-white block">Apex Legends</strong>
-            <span className="text-sm text-zinc-300 block">XX anúncios</span>
-          </div>
-        </a>
-
-        <a className="relative rounded-lg overflow-hidden">
-          <img src="/img/game-05.png" alt="game-05" />
-          <div className="w-full pt-16 pb-4 px-4 bg-nlw-game-card-gradient absolute bottom-0 left-0 right-0">
-            <strong className="font-bold text-white block">World of Warcraft</strong>
-            <span className="text-sm text-zinc-300 block">XX anúncios</span>
-          </div>
-        </a>
-
-        <a className="relative rounded-lg overflow-hidden">
-          <img src="/img/game-06.png" alt="game-06" />
-          <div className="w-full pt-16 pb-4 px-4 bg-nlw-game-card-gradient absolute bottom-0 left-0 right-0">
-            <strong className="font-bold text-white block">Fortnite</strong>
-            <span className="text-sm text-zinc-300 block">XX anúncios</span>
-          </div>
-        </a>
+        <GameCard 
+          data={{
+            title: 'Dota 2',
+            coverURL: '/img/game-02.png',
+            ads: 8
+          }}
+        />
+        
+        <GameCard 
+          data={{
+            title: 'Counter-Strike: Global Offensive',
+            coverURL: '/img/game-03.png',
+            ads: 14
+          }}
+        />
+        
+        <GameCard 
+          data={{
+            title: 'Apex Legends',
+            coverURL: '/img/game-04.png',
+            ads: 6
+          }}
+        />
+        
+        <GameCard 
+          data={{
+            title: 'World of Warcraft',
+            coverURL: '/img/game-05.png',
+            ads: 11
+          }}
+        />
+        
+        <GameCard 
+          data={{
+            title: 'Fortnite',
+            coverURL: '/img/game-06.png',
+            ads: 9
+          }}
+        />
       </div>
 
       <div id="publish-ad-gradient-border" className="mt-8 pt-1 bg-nlw-gradient self-stretch rounded-lg overflow-hidden">
