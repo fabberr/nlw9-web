@@ -1,7 +1,10 @@
 /********** Module Imports **********/
 
 // 3rd-party
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
+// internal config
+import * as appconfig from './appconfig';
 
 // internal styles and assets
 import './styles/main.css';
@@ -12,11 +15,19 @@ import { GameCard } from './components/GameCard';
 import { CreateAdBanner } from './components/CreateAdBanner';
 
 /**
- * Component: App
+ * Component: App.
  * 
  * Main UI element, all other elements are children of this root component.
 */
 function App() {
+
+  /********** React Hooks **********/
+
+  // fetch list of games from our API once (`App` is rendered only once)
+  const [games, setGames] = useState([]);
+  useEffect(() => {
+    // fetch(`http://${appconfig.API_BASE_URL}/games`);
+  }, []);
 
   /********** TSX Code **********/
   
