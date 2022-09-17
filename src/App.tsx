@@ -21,10 +21,23 @@ import { CreateAdBanner } from './components/CreateAdBanner';
 */
 function App() {
 
+  /********** Interfaces **********/
+  
+  /** Represents a `game` resource. */
+  interface Game {
+    id:       string;
+    name:     string;
+    coverURL: string;
+
+    _count: {
+      ads: number
+    };
+  }
+
   /********** React Hooks **********/
 
   // fetch list of games from our API once (`App` is rendered only once)
-  const [games, setGames] = useState([]);
+  const [games, setGames] = useState<Game[]>([]);
   useEffect(() => {
     const resource = 'games';
     const URL = `http://${appconfig.API_BASE_URL}/${resource}`
@@ -45,12 +58,12 @@ function App() {
       </h1>
       <div id="carrousel" className="grid grid-cols-6 gap-6 mt-16">
         
-        <GameCard data={{ title: 'League of Legends', coverURL: '/img/game-01.png', ads: 10}} />
-        <GameCard data={{ title: 'Dota 2', coverURL: '/img/game-02.png', ads: 8}} />        
-        <GameCard data={{ title: 'Counter-Strike: Global Offensive', coverURL: '/img/game-03.png', ads: 14}} />        
-        <GameCard data={{ title: 'Apex Legends', coverURL: '/img/game-04.png', ads: 6}} />        
-        <GameCard data={{ title: 'World of Warcraft', coverURL: '/img/game-05.png', ads: 11}} />        
-        <GameCard data={{ title: 'Fortnite', coverURL: '/img/game-06.png', ads: 9}} />
+        <GameCard data={{ name: 'League of Legends', coverURL: '/img/game-01.png', ads: 10}} />
+        <GameCard data={{ name: 'Dota 2', coverURL: '/img/game-02.png', ads: 8}} />        
+        <GameCard data={{ name: 'Counter-Strike: Global Offensive', coverURL: '/img/game-03.png', ads: 14}} />        
+        <GameCard data={{ name: 'Apex Legends', coverURL: '/img/game-04.png', ads: 6}} />        
+        <GameCard data={{ name: 'World of Warcraft', coverURL: '/img/game-05.png', ads: 11}} />        
+        <GameCard data={{ name: 'Fortnite', coverURL: '/img/game-06.png', ads: 9}} />
       </div>
 
       <CreateAdBanner />
@@ -61,3 +74,5 @@ function App() {
 /********** Module Exports **********/
 
 export default App;
+
+/** @todo move interface declarations into a separate file */
