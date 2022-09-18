@@ -1,7 +1,10 @@
 /********** Module Imports **********/
 
-// 3rd-party
+// React
 import { useEffect, useState } from 'react';
+
+// 3rd-party components
+import * as Dialog from '@radix-ui/react-dialog';
 
 // internal config
 import * as appconfig from './appconfig';
@@ -13,8 +16,9 @@ import logoNLW9 from './assets/nlw9-logo.svg';
 // internal components
 import { GameCard } from './components/GameCard';
 import { CreateAdBanner } from './components/CreateAdBanner';
+import { CreateAdForm } from './components/CreateAdForm';
 
-  /********** Interfaces **********/
+/********** Interfaces **********/
 
 /** Represents a `game` resource returned from the API. */
 interface Game {
@@ -51,10 +55,10 @@ function App() {
   
   return (
     <div id="base" className="max-w-[1344px] mx-auto flex flex-col items-center my-20">
-      <img src={logoNLW9} alt="NLW eSports | Find your DUO" />
+      <img src={logoNLW9} alt="NLW eSports | Find your Duo" />
 
       <h1 className="text-6xl text-white font-black mt-20">
-        Seu <span className="bg-nlw-gradient bg-clip-text text-transparent">duo</span> está aqui.
+        <p>Seu <span className="bg-nlw-gradient bg-clip-text text-transparent">duo</span> está aqui.</p>
       </h1>
 
       <div id="carrousel" className="grid grid-cols-6 gap-6 mt-16">
@@ -68,7 +72,18 @@ function App() {
         }
       </div>
 
-      <CreateAdBanner />
+      <Dialog.Root>
+        <CreateAdBanner />
+
+        <Dialog.Portal>
+          <Dialog.Overlay className="bg-black/60 inset-0 fixed">
+            <Dialog.Content className="bg-[#2A2634] text-white fixed py-8 px-10 rounded-lg w-[480px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 shadow-lg shadow-black/25">
+              <Dialog.Title className="text-3xl font-black">Publique um anúncio</Dialog.Title>
+              <CreateAdForm />
+            </Dialog.Content>
+          </Dialog.Overlay>
+        </Dialog.Portal>
+      </Dialog.Root>
     </div>
   );
 }
