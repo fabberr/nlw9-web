@@ -54,7 +54,7 @@ function App() {
   /********** TSX Code **********/
   
   return (
-    <div id="base" className="max-w-[1344px] mx-auto flex flex-col items-center my-20">
+    <div id="base" className="px-10 max-w-[1344px] mx-auto flex flex-col items-center my-20">
       <img src={logoNLW9} alt="NLW eSports | Find your Duo" />
 
       <h1 className="text-6xl text-white font-black mt-20">
